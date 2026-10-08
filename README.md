@@ -62,7 +62,7 @@ per upstream's schedule; sub-millisecond rows are noisy):
 | compress binary | 1 MB (L6) | 14.63 ms | 12.03 ms | 1.2× faster |
 
 `crc32` regresses on payloads ≥64 KB because CPython's implementation uses
-Intel CRC32 intrinsics that `zlib-rs` 0.6.3 doesn't hit on aarch64-darwin.
+ARM CRC32 intrinsics that `zlib-rs` 0.6.3 doesn't hit on aarch64-darwin.
 
 Output bytes match stdlib exactly at level 9 and diverge at intermediate
 levels — engine-level property of `zlib-rs`, documented in `THIRD_PARTY.md`.
